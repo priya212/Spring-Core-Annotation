@@ -23,5 +23,8 @@ public class App
 
         Movie movie3 = (Movie) ctx.getBean("Movie");
         System.out.println("By Prototype Scope : "+(movie==movie3));
+
+        Movie movie4 = (Movie) ctx.getBean("movie3");
+        System.out.println("By using two different name - "+movie4.getActor().getName()+ " acted in "+movie4.getMovieName());
     }
 }
