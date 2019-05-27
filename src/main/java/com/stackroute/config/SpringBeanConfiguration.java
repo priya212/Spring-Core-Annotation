@@ -71,7 +71,7 @@ public class SpringBeanConfiguration {
         actor =new Actor();
         actor.setName("Tabbu");
         actor.setGender("Female");
-        actor.setAge(52);
+        actor.setAge(54);
         return  actor;
     }
 
