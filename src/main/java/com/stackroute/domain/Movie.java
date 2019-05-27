@@ -1,8 +1,6 @@
 package com.stackroute.domain;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Qualifier;
-import org.springframework.beans.factory.annotation.Required;
 import org.springframework.stereotype.Component;
 
 @Component
@@ -14,11 +12,9 @@ public class Movie {
         return actor;
     }
 
-    @Required
     public void setActor(Actor actor) {
         this.actor = actor;
     }
-
 
     public Movie(int id, String movieName) {
         this.id = id;
@@ -46,7 +42,6 @@ public class Movie {
     public void setMovieName(String movieName) {
         this.movieName = movieName;
     }
-
     public Movie() {
     }
     public Movie(Actor actor) {

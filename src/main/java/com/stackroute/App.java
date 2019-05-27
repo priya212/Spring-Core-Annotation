@@ -17,6 +17,11 @@ public class App
 
         Movie movie1 = (Movie) ctx.getBean("Movie1");
         System.out.println(movie1.getActor().getName()+ " acted in : "+movie1.getMovieName());
-    }
 
+        Movie movie2 = (Movie) ctx.getBean("Movie1");
+        System.out.println("By singleton scope : "+(movie1==movie2));
+
+        Movie movie3 = (Movie) ctx.getBean("Movie");
+        System.out.println("By Prototype Scope : "+(movie==movie3));
+    }
 }
