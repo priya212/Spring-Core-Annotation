@@ -5,6 +5,7 @@ import com.stackroute.awareinterface.BeanFactoryAwareDemo;
 import com.stackroute.awareinterface.BeanNameAwareDemo;
 import com.stackroute.demo.BeanLifeCycleDemo;
 import com.stackroute.awareinterface.ResourceLoaderAwareDemo;
+import com.stackroute.demo.BeanPostProcessorDemo;
 import com.stackroute.domain.Actor;
 import com.stackroute.domain.Movie;
 import org.springframework.beans.factory.annotation.Autowire;
@@ -96,5 +97,9 @@ public class SpringBeanConfiguration {
     @Bean(name="BeanLifeCycleDemo",initMethod = "customInit",destroyMethod = "customDestroy")
     public BeanLifeCycleDemo beanLifeCycleDemo(){
         return new BeanLifeCycleDemo();
+    }
+    @Bean(name="BeanPostProcessorDemo")
+    public BeanPostProcessorDemo beanPostProcessorDemo(){
+        return new BeanPostProcessorDemo();
     }
 }
