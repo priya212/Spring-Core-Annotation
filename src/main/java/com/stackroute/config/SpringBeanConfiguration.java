@@ -1,13 +1,14 @@
 package com.stackroute.config;
 
+import com.stackroute.awareinterface.ApplicationContextAwareDemo;
+import com.stackroute.awareinterface.BeanFactoryAwareDemo;
+import com.stackroute.awareinterface.BeanNameAwareDemo;
+import com.stackroute.awareinterface.ResourceLoaderAwareDemo;
 import com.stackroute.domain.Actor;
 import com.stackroute.domain.Movie;
 import org.springframework.beans.factory.annotation.Autowire;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.config.ConfigurableBeanFactory;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-import org.springframework.context.annotation.Scope;
 
 @Configuration
 public class SpringBeanConfiguration {
@@ -75,5 +76,20 @@ public class SpringBeanConfiguration {
         return  actor;
     }
 
-
+    @Bean(name="ApplicationContextAware")
+    public ApplicationContextAwareDemo applicationContextAwareDemo() {
+        return new ApplicationContextAwareDemo();
+    }
+    @Bean(name="BeanFactoryAware")
+    public BeanFactoryAwareDemo beanFactoryAwareDemo() {
+        return new BeanFactoryAwareDemo();
+    }
+    @Bean(name="BeanNameAware")
+    public BeanNameAwareDemo beanNameAwareDemo() {
+        return new BeanNameAwareDemo();
+    }
+    @Bean(name="ResourceLoaderAware")
+    public ResourceLoaderAwareDemo resourceLoaderAwareDemo(){
+        return new ResourceLoaderAwareDemo();
+    }
 }
