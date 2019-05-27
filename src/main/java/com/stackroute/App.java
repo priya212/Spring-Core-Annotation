@@ -12,7 +12,7 @@ public class App
         ctx.register(AppConfig.class);
         ctx.refresh();
 
-        Movie movie = (Movie) ctx.getBean("Movie");
+        /*Movie movie = (Movie) ctx.getBean("Movie");
         System.out.println(movie.getActor().getName()+ " acted in : "+movie.getMovieName());
 
         Movie movie1 = (Movie) ctx.getBean("Movie1");
@@ -25,6 +25,10 @@ public class App
         System.out.println("By Prototype Scope : "+(movie==movie3));
 
         Movie movie4 = (Movie) ctx.getBean("movie3");
-        System.out.println("By using two different name - "+movie4.getActor().getName()+ " acted in "+movie4.getMovieName());
+        System.out.println("By using two different name - "+movie4.getActor().getName()+ " acted in "+movie4.getMovieName());*/
+
+        //Using Autowire
+        Movie movie = (Movie) ctx.getBean("Movie");
+        System.out.println("Using autowire by name : "+movie.getActor1().getName()+ " acted in "+movie.getMovieName());
     }
 }

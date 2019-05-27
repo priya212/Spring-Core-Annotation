@@ -7,13 +7,14 @@ import org.springframework.stereotype.Component;
 public class Movie {
     private int id;
     private String movieName;
-    private Actor actor;
-    public Actor getActor() {
-        return actor;
+    private Actor actor1;
+    public Actor getActor1() {
+        return actor1;
     }
 
-    public void setActor(Actor actor) {
-        this.actor = actor;
+    @Autowired
+    public void setActor1(Actor actor1) {
+        this.actor1 = actor1;
     }
 
     public Movie(int id, String movieName) {
@@ -21,10 +22,10 @@ public class Movie {
         this.movieName = movieName;
     }
 
-    public Movie(int id, String movieName, Actor actor) {
+    public Movie(int id, String movieName, Actor actor1) {
         this.id = id;
         this.movieName = movieName;
-        this.actor = actor;
+        this.actor1 = actor1;
     }
 
     public int getId() {
@@ -44,8 +45,10 @@ public class Movie {
     }
     public Movie() {
     }
+
+
     public Movie(Actor actor) {
-        this.actor = actor;
+        this.actor1 = actor1;
     }
 
     @Override
@@ -53,7 +56,7 @@ public class Movie {
         return "Movie{" +
                 "id=" + id +
                 ", movieName='" + movieName + '\'' +
-                ", actor=" + actor +
+                ", actor=" + actor1 +
                 '}';
     }
 }
