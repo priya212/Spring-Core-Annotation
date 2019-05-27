@@ -14,6 +14,7 @@ public class App
 
         Movie movie = (Movie) ctx.getBean("Movie");
         System.out.println(movie.getActor1().getName()+ " acted in : "+movie.getMovieName());
+
         /*Movie movie = (Movie) ctx.getBean("Movie");
         System.out.println(movie.getActor().getName()+ " acted in : "+movie.getMovieName());
 
@@ -32,5 +33,6 @@ public class App
         /*Using Autowire(task 3)
         Movie movie = (Movie) ctx.getBean("Movie");
         System.out.println("Using autowire by name : "+movie.getActor1().getName()+ " acted in "+movie.getMovieName());*/
+        ctx.close();
     }
 }

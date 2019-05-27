@@ -3,6 +3,7 @@ package com.stackroute.config;
 import com.stackroute.awareinterface.ApplicationContextAwareDemo;
 import com.stackroute.awareinterface.BeanFactoryAwareDemo;
 import com.stackroute.awareinterface.BeanNameAwareDemo;
+import com.stackroute.demo.BeanLifeCycleDemo;
 import com.stackroute.awareinterface.ResourceLoaderAwareDemo;
 import com.stackroute.domain.Actor;
 import com.stackroute.domain.Movie;
@@ -91,5 +92,9 @@ public class SpringBeanConfiguration {
     @Bean(name="ResourceLoaderAware")
     public ResourceLoaderAwareDemo resourceLoaderAwareDemo(){
         return new ResourceLoaderAwareDemo();
+    }
+    @Bean(name="BeanLifeCycleDemo",initMethod = "customInit",destroyMethod = "customDestroy")
+    public BeanLifeCycleDemo beanLifeCycleDemo(){
+        return new BeanLifeCycleDemo();
     }
 }
